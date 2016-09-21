@@ -1,5 +1,3 @@
-package com.company;
-
 import jodd.json.JsonParser;
 import jodd.json.JsonSerializer;
 
@@ -71,7 +69,7 @@ public class Main {
             main(args);
         }
         if (answer.equalsIgnoreCase("no")){
-            System.out.printf("%s's information has not been changed.\n", book.title);
+            System.out.println("Your book's information has not been changed.");
             System.out.println("Have a good one....");
             System.exit(0);
         }
