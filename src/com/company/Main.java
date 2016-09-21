@@ -1,12 +1,22 @@
 package com.company;
 
+import jodd.json.JsonParser;
+import jodd.json.JsonSerializer;
+
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.util.Scanner;
 
 public class Main {
 
+    static final String BOOK = "/com.company/book.json";
+    static Book book = new Book();
+
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Book book = new Book();
+
+
 
         System.out.println("What is the book's name?");
         String bookName = scanner.nextLine();
@@ -53,6 +63,33 @@ public class Main {
         }
         System.out.println(book.author);
 
-
     }
+    static void write(){
+        JsonSerializer serializer = new JsonSerializer();
+        String json = serializer.serialize(book);
+        File f = new File(BOOK);
+        try {
+            FileWriter fw = new FileWriter(f);
+            fw.write(json);
+            fw.close();
+        } catch (Exception e) {
+            System.out.println("Couldn't save to file!");
+        }
+    }
+    static void read() {
+        File f = new File(BOOK);
+        try {
+            FileReader fr = new FileReader(f);
+            int fileSize = (int) f.length();
+            char[] contents = new char[fileSize];
+            fr.read(contents, 0, fileSize);
+            JsonParser parser = new JsonParser();
+            book = parser.parse(contents, Book.class);
+        }
+        catch (Exception e) {
+            System.out.println("Couldn't load file!");
+        }
+    }
+
+
 }
