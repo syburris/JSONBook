@@ -22,7 +22,7 @@ public class Main {
         System.out.println();
         System.out.println();
         System.out.println("Would you like to update your book information?");
-        System.out.println("Enter yes to update, or no to save the current information.");
+        System.out.println("Enter yes to update, or no to save the current information and exit.");
         String answer = scanner.nextLine();
         if (answer.equalsIgnoreCase("yes")) {
             System.out.println("What is the book's title?");
