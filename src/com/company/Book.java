@@ -4,22 +4,22 @@ package com.company;
  * Created by stevenburris on 9/21/16.
  */
 public class Book {
-    String name;
+    String title;
     String author;
     String publisher;
     int yearPublished;
-    boolean enjoyedReading;
+    String genre;
 
     Book() {
 
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getAuthor() {
@@ -46,11 +46,11 @@ public class Book {
         this.yearPublished = yearPublished;
     }
 
-    public boolean isEnjoyedReading() {
-        return enjoyedReading;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setEnjoyedReading(boolean enjoyedReading) {
-        this.enjoyedReading = enjoyedReading;
+    public void setGenre() {
+        this.genre = genre;
     }
 }
