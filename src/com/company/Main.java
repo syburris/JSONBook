@@ -15,13 +15,14 @@ public class Main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println();
         System.out.println("This is your current book information:");
         System.out.println();
         read();
         System.out.println();
         System.out.println();
         System.out.println("Would you like to update your book information?");
-        System.out.println("Type yes to update, or no to save the current information.");
+        System.out.println("Enter yes to update, or no to save the current information.");
         String answer = scanner.nextLine();
         if (answer.equalsIgnoreCase("yes")) {
             System.out.println("What is the book's title?");
@@ -69,9 +70,14 @@ public class Main {
             write();
             main(args);
         }
-        else {
-            System.out.println("Your book's information has not been changed.");
+        if (answer.equalsIgnoreCase("no")){
+            System.out.printf("%s's information has not been changed.\n", book.title);
+            System.out.println("Have a good one....");
             System.exit(0);
+        }
+        else {
+            System.out.println("Your response was invalid, try again");
+            main(args);
         }
 
 
