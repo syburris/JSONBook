@@ -41,7 +41,7 @@ public class Main {
             else {
                 book.author = bookAuthor;
             }
-            System.out.println("What company published the book?");
+            System.out.println("Which company published the book?");
             String bookPublisher = scanner.nextLine();
             if (bookPublisher == null) {
                 System.out.printf("%s had to have been published, begin again.\n", bookTitle);
